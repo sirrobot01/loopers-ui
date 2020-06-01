@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+body {
+    font-family: 'Poppins' !important;
+    ;font-size: 16px !important;
+    background-color:  hsl(0, 0%, 98%);
+}
+
+
+.card {
+    border: 0 !important;
+    border-radius: 0.5rem !important;
+}
+
+
+input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 0;
+    font-family: inherit;
+    display: inline-block;
+    border: 0.5px solid rgb(219, 218, 218);
+    box-sizing: border-box;
+    
+  }
+
+input::placeholder {
+    text-decoration: wavy;
+    text-align: center;
+}
+
+input:focus {
+    border-bottom: 4px solid hsl(0, 78%, 62%) !important;
+    outline-width: 0;
+}
+
+  input:not([type=submit]):focus {
+    border: 0 0 2px 2px solid rgb(219, 218, 218);
+  }
+
+  input[type=submit] {
+      background-color: hsl(154, 59%, 51%);
+      color: white;
+  }
+
+  input[type=submit]:hover {
+    background-color: hsl(154, 48%, 31%);
+  }
+
+  

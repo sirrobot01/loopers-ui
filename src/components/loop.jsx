@@ -28,22 +28,16 @@ class Loopers extends Component {
 
     handleSubmit = () => {
         let url = 'https://loopers-api.herokuapp.com/'
-        this.setState({loading: true})
-        axios({
-            method: 'post',
-            url: url,
-            data: {
-                link: this.state.inputValue
-            }
+        this.setState({ loading: true }, () => {
+            axios.post(url, { link: this.state.inputValue })
+                .then(res => this.setState({
+                    links: Object.values(res.data)[0].links,
+                    loading: false
+                })
+                )
+                .catch(err => console.error(err))
+                     this.setState({ loading: false })
         })
-            .then(res => {
-                this.setState({ links: Object.values(res.data)[0].links})
-                this.setState({ loading: false })
-
-            })
-            .catch(err => console.error(err))
-        this.setState({ loading: false })
-
     }
 
     updateInputState = (e) => this.setState({inputValue: e.target.value})
